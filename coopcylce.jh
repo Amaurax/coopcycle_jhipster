@@ -1,0 +1,85 @@
+entity Client {
+    lastName String required minlength(3) maxlength(40),
+    firstName String required minlength(3) maxlength(40),
+    email String required unique pattern(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/),
+    phone String required unique pattern(/^\+[1-9]\d{1,14}$/),
+    address String required
+}
+
+entity Seller {
+    name String required,
+    address String required
+}
+
+entity Courier {
+    lastName String required minlength(3) maxlength(30),
+    firstName String required minlength(3) maxlength(30),
+    email String required unique pattern(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/),
+    phone String required unique pattern(/^\+[1-9]\d{1,14}$/),
+    vehicle VehicleType,
+    status String 
+}
+
+entity Order {
+	number Integer required unique,
+	price Integer required,
+    orderDate ZonedDateTime required,
+    deliveryDate ZonedDateTime,
+    deliveryAddress String,
+    status Status,
+    paymentType PaymentType required unique
+}
+
+entity Cooperative {
+  name String required,
+  address String,
+  //nom directeur général
+    director String
+}
+
+entity Product {
+    name String required,
+    description String,
+    price Decimal required
+}
+
+enum PaymentType {
+    CB,
+    APPLE,
+    GOOGLE,
+    PAYPAL, 
+    CHEQUE_REPAS,
+        IZLY,
+    CRYPTO
+}
+
+enum VehicleType {
+	BIKE,
+    E_SCOOTER,
+    SCOOTER
+}
+
+enum Status {
+    PENDING,
+    CONFIRMED,
+    IN_PROGRESS,
+    DELIVERED,
+    CANCELED
+}
+	
+relationship ManyToOne {
+    Order{client} to Client,
+    Order{seller} to Seller,
+    Order{courier} to Courier,
+    Client to Cooperative, //une cooperative a plusieurs clients
+    Seller to Cooperative, //une cooperative a plusieurs vendeurs
+    Courier to Cooperative, //une cooperative a plusieurs livreurs
+    //une cooperative globale avec plusieurs sous-cooperatives
+    Cooperative{cooperatives} to Cooperative
+}
+
+relationship ManyToMany {
+    Order{products} to Product{orders}
+}
+
+dto * with mapstruct
