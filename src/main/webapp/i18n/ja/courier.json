@@ -1,0 +1,30 @@
+{
+  "myappApp": {
+    "courier": {
+      "home": {
+        "title": "Couriers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Courier を追加",
+        "createOrEditLabel": "Courierを追加または編集",
+        "notFound": "No Couriers found"
+      },
+      "created": "A new Courier is created with identifier {{ param }}",
+      "updated": "A Courier is updated with identifier {{ param }}",
+      "deleted": "A Courier is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Courier {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Courier"
+      },
+      "id": "ID",
+      "lastName": "Last Name",
+      "firstName": "First Name",
+      "email": "Email",
+      "phone": "Phone",
+      "vehicle": "Vehicle",
+      "status": "Status",
+      "cooperative": "Cooperative"
+    }
+  }
+}

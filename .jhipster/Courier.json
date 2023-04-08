@@ -1,0 +1,58 @@
+{
+  "applications": "*",
+  "changelogDate": "20230408150414",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "courier",
+  "fields": [
+    {
+      "fieldName": "lastName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "30",
+      "fieldValidateRulesMinlength": "3"
+    },
+    {
+      "fieldName": "firstName",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "minlength", "maxlength"],
+      "fieldValidateRulesMaxlength": "30",
+      "fieldValidateRulesMinlength": "3"
+    },
+    {
+      "fieldName": "email",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "pattern"],
+      "fieldValidateRulesPattern": "\\b[A-Za-z0-9.]+@[A-Za-z0-9-]+\\.[A-Za-z]{2,}\\b"
+    },
+    {
+      "fieldName": "phone",
+      "fieldType": "String",
+      "fieldValidateRules": ["required", "unique", "pattern"],
+      "fieldValidateRulesPattern": "\\b[0-9]{10}\\b"
+    },
+    {
+      "fieldName": "vehicle",
+      "fieldType": "VehicleType",
+      "fieldValues": "BIKE,E_SCOOTER,SCOOTER"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Courier",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "cooperative",
+      "otherEntityRelationshipName": "courier",
+      "relationshipName": "cooperative",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "serviceClass"
+}

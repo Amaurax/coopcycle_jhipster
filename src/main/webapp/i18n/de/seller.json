@@ -1,0 +1,27 @@
+{
+  "myappApp": {
+    "seller": {
+      "home": {
+        "title": "Sellers",
+        "refreshListLabel": "Liste aktualisieren",
+        "createLabel": "Seller erstellen",
+        "createOrEditLabel": "Seller erstellen oder bearbeiten",
+        "notFound": "Keine Sellers gefunden"
+      },
+      "created": "Seller erstellt mit ID {{ param }}",
+      "updated": "Seller aktualisiert mit ID {{ param }}",
+      "deleted": "Seller gelöscht mit ID {{ param }}",
+      "delete": {
+        "question": "Soll Seller {{ id }} wirklich dauerhaft gelöscht werden?"
+      },
+      "detail": {
+        "title": "Seller"
+      },
+      "id": "ID",
+      "name": "Name",
+      "address": "Address",
+      "cooperative": "Cooperative",
+      "product": "Product"
+    }
+  }
+}

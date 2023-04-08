@@ -1,0 +1,73 @@
+{
+  "applications": "*",
+  "changelogDate": "20230408150415",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "jhi_order",
+  "fields": [
+    {
+      "fieldName": "number",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required", "unique"]
+    },
+    {
+      "fieldName": "price",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "orderDate",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "deliveryDate",
+      "fieldType": "ZonedDateTime"
+    },
+    {
+      "fieldName": "deliveryAddress",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "Status",
+      "fieldValues": "PENDING,CONFIRMED,IN_PROGRESS,DELIVERED,CANCELED"
+    },
+    {
+      "fieldName": "paymentType",
+      "fieldType": "PaymentType",
+      "fieldValidateRules": ["required", "unique"],
+      "fieldValues": "CB,APPLE,GOOGLE,PAYPAL,CHEQUE_REPAS,IZLY,CRYPTO"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Order",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "relationshipName": "client",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "seller",
+      "relationshipName": "seller",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "courier",
+      "relationshipName": "courier",
+      "relationshipType": "many-to-one"
+    },
+    {
+      "otherEntityName": "product",
+      "otherEntityRelationshipName": "orders",
+      "ownerSide": true,
+      "relationshipName": "products",
+      "relationshipType": "many-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}

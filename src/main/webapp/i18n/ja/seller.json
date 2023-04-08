@@ -1,0 +1,27 @@
+{
+  "myappApp": {
+    "seller": {
+      "home": {
+        "title": "Sellers",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Seller を追加",
+        "createOrEditLabel": "Sellerを追加または編集",
+        "notFound": "No Sellers found"
+      },
+      "created": "A new Seller is created with identifier {{ param }}",
+      "updated": "A Seller is updated with identifier {{ param }}",
+      "deleted": "A Seller is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Seller {{ id }}を削除してもよろしいですか？"
+      },
+      "detail": {
+        "title": "Seller"
+      },
+      "id": "ID",
+      "name": "Name",
+      "address": "Address",
+      "cooperative": "Cooperative",
+      "product": "Product"
+    }
+  }
+}

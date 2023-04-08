@@ -1,0 +1,27 @@
+{
+  "myappApp": {
+    "seller": {
+      "home": {
+        "title": "Sellers",
+        "refreshListLabel": "Обновить список",
+        "createLabel": "Создать новый Seller",
+        "createOrEditLabel": "Создать или отредактировать Seller",
+        "notFound": "Sellers не найдено"
+      },
+      "created": "Новый Seller создан с идентификатором {{ param }}",
+      "updated": "Seller обновлен с идентификатором {{ param }}",
+      "deleted": "Seller удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Seller {{ id }}?"
+      },
+      "detail": {
+        "title": "Seller"
+      },
+      "id": "ID",
+      "name": "Name",
+      "address": "Address",
+      "cooperative": "Cooperative",
+      "product": "Product"
+    }
+  }
+}

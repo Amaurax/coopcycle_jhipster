@@ -1,0 +1,10 @@
+{
+  "myappApp": {
+    "VehicleType": {
+      "null": "",
+      "BIKE": "BIKE",
+      "E_SCOOTER": "E_SCOOTER",
+      "SCOOTER": "SCOOTER"
+    }
+  }
+}

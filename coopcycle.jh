@@ -1,8 +1,8 @@
 entity Client {
     lastName String required minlength(3) maxlength(40),
     firstName String required minlength(3) maxlength(40),
-    email String required unique pattern(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/),
-    phone String required unique pattern(/^\+[1-9]\d{1,14}$/),
+    email String required unique pattern(/\b[A-Za-z0-9.]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}\b/),
+    phone String required unique pattern(/\b[0-9]{10}\b/),
     address String required
 }
 
@@ -14,8 +14,8 @@ entity Seller {
 entity Courier {
     lastName String required minlength(3) maxlength(30),
     firstName String required minlength(3) maxlength(30),
-    email String required unique pattern(/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/),
-    phone String required unique pattern(/^\+[1-9]\d{1,14}$/),
+    email String required unique pattern(/\b[A-Za-z0-9.]+@[A-Za-z0-9-]+\.[A-Za-z]{2,}\b/),
+    phone String required unique pattern(/\b[0-9]{10}\b/),
     vehicle VehicleType,
     status String 
 }
@@ -40,7 +40,7 @@ entity Cooperative {
 entity Product {
     name String required,
     description String,
-    price Decimal required
+    price Integer required
 }
 
 enum PaymentType {
@@ -74,8 +74,7 @@ relationship ManyToOne {
     Client to Cooperative, //une cooperative a plusieurs clients
     Seller to Cooperative, //une cooperative a plusieurs vendeurs
     Courier to Cooperative, //une cooperative a plusieurs livreurs
-    //une cooperative globale avec plusieurs sous-cooperatives
-    Cooperative{cooperatives} to Cooperative
+    Product to Seller //un vendeur a plusieurs produits
 }
 
 relationship ManyToMany {

@@ -1,0 +1,48 @@
+{
+  "applications": "*",
+  "changelogDate": "20230408150416",
+  "dto": "mapstruct",
+  "embedded": false,
+  "entityTableName": "cooperative",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "address",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "director",
+      "fieldType": "String"
+    }
+  ],
+  "fluentMethods": true,
+  "jpaMetamodelFiltering": false,
+  "name": "Cooperative",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "client",
+      "otherEntityRelationshipName": "cooperative",
+      "relationshipName": "client",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "seller",
+      "otherEntityRelationshipName": "cooperative",
+      "relationshipName": "seller",
+      "relationshipType": "one-to-many"
+    },
+    {
+      "otherEntityName": "courier",
+      "otherEntityRelationshipName": "cooperative",
+      "relationshipName": "courier",
+      "relationshipType": "one-to-many"
+    }
+  ],
+  "service": "serviceClass"
+}
